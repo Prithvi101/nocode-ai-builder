@@ -1,13 +1,48 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  border-radius: 10px;
+  border: 4px solid #d4bfea;
+  background-color: #fff;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  max-width: 280px;
+  transition: all 250ms ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.container:hover {
+  border-color: #c2a7e2;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container.selected {
+  border: 4px solid #a390d4;
+  color: #3d2c8d;
+  box-shadow: 0 4px 10px rgba(161, 124, 255, 0.2);
+  transition: all 0.3s ease-in-out; /* Smooth transition for border, color, and shadow changes */
+}
+
+.container.selected:hover {
+  border-color: #8e78be;
+  box-shadow: 0 4px 10px rgba(161, 124, 255, 0.3); /* Slightly stronger shadow on hover */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
