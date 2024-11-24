@@ -25,7 +25,6 @@ export const useGetRoot = () => {
     queryKey: ["post-pipeline"],
     queryFn: async (params) => {
       const response = await baseApi.get("/", params);
-      console.log(response.data);
       return response?.data;
     },
   });

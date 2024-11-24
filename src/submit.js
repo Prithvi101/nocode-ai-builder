@@ -9,6 +9,7 @@ export const SubmitButton = () => {
   const { nodes, edges } = usePipelineStore();
   const { data, mutateAsync } = usePostPipeline();
   const [showAlert, setShowAlert] = useState(false);
+  const [isError, setIsError] = useState(false);
   const handleSubmit = async () => {
     try {
       await mutateAsync({
@@ -19,14 +20,21 @@ export const SubmitButton = () => {
       });
       setShowAlert(true);
     } catch (error) {
-      // console.log(error);
+      setIsError(true);
     }
   };
   return (
     <div className="px-8 flex items-center justify-center">
       {/* {loading && <Loader />} */}
       {showAlert && (
-        <MultiAlert data={data} onClose={() => setShowAlert(false)} />
+        <MultiAlert
+          data={data}
+          isError={isError}
+          onClose={() => {
+            setShowAlert(false);
+            setIsError(false);
+          }}
+        />
       )}
       <button
         onClick={() => handleSubmit()}
