@@ -18,7 +18,7 @@ export const DraggableNode = ({ type, label, Icon }) => {
                   cursor-grab transition-shadow ease-in-out duration-300 
                   p-4 text-gray-700 font-semibold items-center 
                   gap-2 rounded-xl min-w-[5rem] flex flex-col 
-                  aspect-square ${type}`}
+                   ${type}`}
       draggable
     >
       {Icon && (

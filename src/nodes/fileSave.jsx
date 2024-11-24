@@ -1,17 +1,15 @@
-// textNode.js
-
 import { useState } from "react";
-import { Handle, Position } from "reactflow";
 import BaseNode from "../components/BaseNode/BaseNode";
 import InputField from "../components/InputField/InputField";
-import { MdTextFields } from "react-icons/md";
+import { MdSave } from "react-icons/md";
+import { Position } from "reactflow";
 
-export const TextNode = ({ id, data, selected }) => {
+export function FileSave({ id, data, selected }) {
   const [name, setName] = useState("");
   return (
     <BaseNode selected={selected}>
-      <BaseNode.TitleBar data={data} Icon={MdTextFields}>
-        Text
+      <BaseNode.TitleBar data={data} Icon={MdSave}>
+        Save
       </BaseNode.TitleBar>
       <InputField
         id={id}
@@ -21,10 +19,10 @@ export const TextNode = ({ id, data, selected }) => {
       ></InputField>
 
       <BaseNode.Handle
-        type="target"
+        type="source"
         position={Position.Right}
         id={`${id}-prompt`}
       />
     </BaseNode>
   );
-};
+}

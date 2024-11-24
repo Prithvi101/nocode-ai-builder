@@ -63,7 +63,7 @@ const InputField = ({
       200,
       lines.reduce((max, line) => Math.max(max, line.length * 8), 0)
     );
-    const height = Math.max(14, lines.length * 14 + 14);
+    const height = Math.max(14, lines.length * 16 + 16);
     setNodeStyle({ width, height });
   };
 
@@ -137,7 +137,7 @@ const InputField = ({
             onKeyDown={handleKeyDown}
             onBlur={handleBlur}
             onChange={handleInputChange}
-            className="w-full outline-none border-none bg-transparent mt-3 px-1 pb-0"
+            className="w-full outline-none border-none bg-transparent mt-3 px-1 pb-0 leading-[16px]"
             style={{
               resize: "none",
               overflow: "hidden",

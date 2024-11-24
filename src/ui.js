@@ -13,6 +13,8 @@ import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";
 import usePipelineStore from "./hooks/frontend/src/hooks/provider/usePipelineStore";
+import { FileSave } from "./nodes/fileSave";
+import { TransformNode } from "./nodes/transformNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -21,6 +23,8 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  fileSave: FileSave,
+  transform: TransformNode,
 };
 
 const selector = (state) => ({
